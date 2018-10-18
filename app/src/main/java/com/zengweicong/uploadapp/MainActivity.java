@@ -8,8 +8,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,9 +19,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -56,29 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             adapter.setListpb(MainActivity.this.listpb);
                         }
-//                        mListView.setDivider(null);
                         mListView.setAdapter(adapter);
-                        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> arg0, View arg1, int positon, long id) {
-                                Log.d(TAG,"listview 点击");
-                                //在这里面就是执行点击后要进行的操作,这里只是做一个显示
-//                                Toast.makeText(MainActivity.this, "您点击的是"+list.get(positon).toString(), 0).show();
-                                new  AlertDialog.Builder(MainActivity.this)
-                                        .setTitle("更新信息" )
-                                        .setMessage(listpb.get(positon).description)
-                                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialogInterface, int i) {
-
-                                            }
-                                        }
-                        ).show();
-                            }
-                        });
-//                        arrayAdapter=new ArrayAdapter<String>(MainActivity.this,R.layout.support_simple_spinner_dropdown_item,str1);
-//                        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                        spinner.setAdapter(arrayAdapter);
                     }
                     break;
                 default:
@@ -93,81 +75,72 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initView();
+        getNetData();
+        initBroadcast();
+   }
+
+    private void initView() {
         mListView = (ListView)findViewById(R.id.list_view);
         netState = (TextView)findViewById(R.id.net_state);
         title = (TextView)findViewById(R.id.title);
-//        spinner=(Spinner) findViewById(R.id.spinner);
-//        tip=(TextView) findViewById(R.id.txttip) ;
-//        btnStart=(Button) findViewById(R.id.btn_start);
-        if(!connection(this)){
-            title.setVisibility(View.INVISIBLE);
-            mListView.setVisibility(View.INVISIBLE);
-            netState.setText("无网络,请检查网络连接");
-        }
-        else {
-            netState.setVisibility(View.INVISIBLE);
-            new Thread(){
-                @Override
-                public void run() {
-                    try {
-                        resdata = HttpUtils.getRequester(URL);
-                        List<String> model = new ArrayList<String>();
-                        model = JsonUtil.parseCities(resdata);
-                        Log.d(TAG,"model" + model.toString());
-                        ProjectBean pb = null;
-                        for (int i = 0;i<model.size();i++){
-                            JSONObject jsonObject = JSONObject.parseObject(model.get(i));
-                            pb = JSONObject.toJavaObject(jsonObject,
-                                    ProjectBean.class);
-                            Log.d(TAG,"description "+ pb.description);
-                            listpb.add(pb);
-                        }
-                        mHandler.sendEmptyMessage(0);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }  catch (org.json.JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }.start();
-        }
-        init();
-//            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                @Override
-//                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-////                    Collection<String> links = modelinfo.values();// 得到全部的value
-////                    Collection<String> names = modelinfo.keySet();
-////                    Iterator<String> iter = links.iterator() ;
-////                    while(iter.hasNext()){
-////                        link = iter.next() ;
-////                    }
-////                    Iterator<String> iter2 = names.iterator() ;
-////                    while(iter2.hasNext()){
-////                        name = iter2.next() ;
-////                    }
-////                    Log.d(TAG,name + "  " + link);
-//                    name=str1[i];
-//                    link = str2[i];
-//
-//                }
-//
-//                @Override
-//                public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//                }
-//            });
-//        btnStart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                // 启动服务
-//                intent= new Intent(MainActivity.this, MyService.class);
-//                intent.putExtra("name",name);
-//                intent.putExtra("link",link);
-//                startService(intent);
-//            }
-//        });
+
+        /*mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int positon, long id) {
+                Toast.makeText(MainActivity.this,"click",Toast.LENGTH_SHORT).show();
+                Log.d(TAG,"listview 点击");
+                //在这里面就是执行点击后要进行的操作,这里只是做一个显示
+//                                Toast.makeText(MainActivity.this, "您点击的是"+list.get(positon).toString(), 0).show();
+                new  AlertDialog.Builder(MainActivity.this)
+                        .setTitle("更新信息" )
+                        .setMessage(listpb.get(positon).description)
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                    }
+                                }
+                        ).show();
+            }
+        });*/
+    }
+
+    public void getNetData(){
+       if(!connection(this)){
+           title.setVisibility(View.INVISIBLE);
+           mListView.setVisibility(View.INVISIBLE);
+           netState.setText("无网络,请检查网络连接");
+       }
+       else {
+           netState.setVisibility(View.INVISIBLE);
+           new Thread(){
+               @Override
+               public void run() {
+                   try {
+                       resdata = HttpUtils.getRequester(URL);
+                       List<String> model = new ArrayList<String>();
+                       model = JsonUtil.parseCities(resdata);
+                       Log.d(TAG,"model" + model.toString());
+                       ProjectBean pb = null;
+                       for (int i = 0;i<model.size();i++){
+                           JSONObject jsonObject = JSONObject.parseObject(model.get(i));
+                           pb = JSONObject.toJavaObject(jsonObject,
+                                   ProjectBean.class);
+                           Log.d(TAG,"description "+ pb.description);
+                           listpb.add(pb);
+                       }
+                       mHandler.sendEmptyMessage(0);
+                   } catch (IOException e) {
+                       e.printStackTrace();
+                   }  catch (org.json.JSONException e) {
+                       e.printStackTrace();
+                   }
+               }
+           }.start();
+       }
    }
-    public void init() {
+    public void initBroadcast() {
         mBroadcastReceiverp = new UpdataBroadcastReceiver();
         mBroadcastReceiverd = new UpdataBroadcastReceiver();
         IntentFilter intentFilterpackage = new IntentFilter();
@@ -202,24 +175,40 @@ public class MainActivity extends AppCompatActivity {
             }
             Log.d(TAG, "RECEI:" + intent.getAction());
             if (intent.getAction().equals(Intent.ACTION_PACKAGE_REPLACED) || intent.getAction().equals(Intent.ACTION_PACKAGE_ADDED)) {
-                Log.d(TAG, "RECEI");
-                long ID = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
-                int versionCodeLocal = APKVersionCodeUtils.getVersionCode(MainActivity.this, listpb.get(0).packageName);
-                List<ProjectBean> testList = new ArrayList<>();
+                Log.d(TAG, intent.getDataString());
                 listpb.get(0).description = listpb.get(0).description + " ";
-                //testList.addAll(listpb);
                 adapter.refreshData(listpb);
             }
             if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)) {
-//                Log.d(TAG, intent.getDataString());
-                int versionCodeLocal = APKVersionCodeUtils.getVersionCode(MainActivity.this, listpb.get(0).packageName);
-                List<ProjectBean> testList = new ArrayList<>();
-                listpb.get(0).description = listpb.get(0).description + " ";
-                //testList.addAll(listpb);
-                adapter.refreshData(listpb);
-//            }
+
+                long myDwonloadID = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+                SharedPreferences sPreferences = context.getSharedPreferences("downloadcomplete", 0);
+                long refernece = sPreferences.getLong("refernece", 0);
+                if (refernece == myDwonloadID) {
+                    String serviceString = Context.DOWNLOAD_SERVICE;
+                    DownloadManager dManager = (DownloadManager) context.getSystemService(serviceString);
+                    Intent install = new Intent(Intent.ACTION_VIEW);
+                    Uri downloadFileUri = dManager.getUriForDownloadedFile(myDwonloadID);
+                    install.setDataAndType(downloadFileUri, "application/vnd.android.package-archive");
+                    install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(install);
+                }
             }
         }
+    }
+
+    private void refreshListView(){
+        if(listpb==null || listpb.size()<=0){
+            return;
+        }
+        listpb.get(0).description = listpb.get(0).description + " ";
+        //testList.addAll(listpb);
+        adapter.refreshData(listpb);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshListView();
     }
 
     @Override
@@ -227,6 +216,5 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         unregisterReceiver(mBroadcastReceiverp);
         unregisterReceiver(mBroadcastReceiverd);
-
     }
 }

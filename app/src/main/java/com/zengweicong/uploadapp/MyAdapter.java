@@ -1,6 +1,8 @@
 package com.zengweicong.uploadapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -12,7 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +62,20 @@ public class MyAdapter extends BaseAdapter {
         return position;
     }
 
+    private void cliclItem(int position){
+        Log.d(TAG,"listview 点击");
+        new  AlertDialog.Builder(mContext)
+                .setTitle("更新信息" )
+                .setMessage(listpb.get(position).description)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        }
+                ).show();
+    }
+
     public boolean isEnabled(int position) {
         versionCodeLocal = APKVersionCodeUtils.getVersionCode(mContext,listpb.get(position).packageName);
         versionNameLocal = APKVersionCodeUtils.getVerName(mContext,listpb.get(position).packageName);
@@ -75,25 +94,36 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         final ViewHolder holder;
-        if (convertView == null) {
+       if (convertView == null) {
             convertView = mInflater.inflate(R.layout.list_item, null);
             holder = new ViewHolder();
             holder.title = (TextView)convertView.findViewById(R.id.db_info);
             holder.viewBtn = (Button) convertView.findViewById(R.id.download);
+            holder.itemLayout=convertView.findViewById(R.id.list_item);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+
+        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cliclItem(position);
+            }
+        });
+
         holder.title.setText(listpb.get(position).project);
         Log.d(TAG,listpb.get(position).project + listpb.get(position).link);
         holder.viewBtn.setTag(listpb.get(position).link);
         Log.d(TAG,"文件名" +listpb.get(position).getVersionname());
+        String subPath = holder.title.getText() + listpb.get(position).getVersionname();
         if(!isEnabled(position)){
             holder.viewBtn.setText("已是最新");
             holder.viewBtn.setEnabled(false);
             holder.viewBtn.getBackground().setColorFilter(Color.parseColor("#dcdcdc"), PorterDuff.Mode.SRC_OVER);
         }
-        else if (t.fileIsExists("/sdcard/download/" + holder.title.getText() + listpb.get(position).getVersionname()+".apk")){
+        else if (t.fileIsExists("/sdcard/download/" + subPath +".apk")){
+            holder.viewBtn.getBackground().clearColorFilter();
             holder.viewBtn.setText("下载完成");
             holder.viewBtn.setEnabled(false);
         }
@@ -114,11 +144,10 @@ public class MyAdapter extends BaseAdapter {
                 mContext.startService(intent);
             }
         });
-//        int[] colors = { Color.WHITE, Color.rgb(219, 238, 244) };//RGB颜色
-//        convertView.setBackgroundColor(colors[position % 2]);
         return convertView;
     }
     static class ViewHolder {
+        LinearLayout itemLayout;
         TextView title;
         Button viewBtn;
     }

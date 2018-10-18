@@ -1,0 +1,150 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2eaccf271816baad80bad33511bca1a9\AndroidManifest.xml:17:1-22:12
+MERGED from [cn.trinea.android.common:trinea-android-common:4.2.15] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\trinea-android-common-4.2.15.aar\ee8833f4e5ef501890bd47f8db01ee7c\AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e13a7569cf41cf9ec5d7b5add38e5952\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\d6d71ac162e7539cca23a2e088a9f805\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\5d45056e9b2aa11a9ec0e97c4d5736b0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\53c2d65d9c07acfd733a3c6127449e2e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\9dd985be23ab69d4226196b4ba1244ac\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a24748345a788732793fddc42a93aa6e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f61fd05e367d457700735752e7c899a3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ff2c352a9feb9cdae04b7e4e5eef362c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\18fee21aaeec1be536e519aa2fa07c20\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\eba31d667b4f0de77aa26d3d52e57cf9\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\4ddecdc0e7d4eee848c930379790dbb4\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+	package
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:4:5-40
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:1-42:12
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:5:5-80
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:5:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.WRITE_INTERNAL_STORAGE
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:7:22-78
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:8:22-77
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:9:5-78
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:9:22-76
+uses-permission#android.permission.ACCESS_DOWNLOAD_MANAGER
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:10:5-82
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:10:22-79
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:11:5-12:47
+	tools:ignore
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:12:9-44
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:11:22-81
+uses-permission#android.permission.INTERNET
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:13:5-66
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:13:22-64
+application
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:14:5-40:19
+MERGED from [cn.trinea.android.common:trinea-android-common:4.2.15] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\trinea-android-common-4.2.15.aar\ee8833f4e5ef501890bd47f8db01ee7c\AndroidManifest.xml:11:5-12:19
+MERGED from [cn.trinea.android.common:trinea-android-common:4.2.15] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\trinea-android-common-4.2.15.aar\ee8833f4e5ef501890bd47f8db01ee7c\AndroidManifest.xml:11:5-12:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e13a7569cf41cf9ec5d7b5add38e5952\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e13a7569cf41cf9ec5d7b5add38e5952\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:18:9-35
+	android:label
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:17:9-41
+	android:icon
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:16:9-33
+	android:allowBackup
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:15:9-35
+	android:theme
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:19:9-40
+activity#com.zengweicong.uploadapp.MainActivity
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:20:9-26:20
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:20:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:21:13-25:29
+action#android.intent.action.MAIN
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:24:17-77
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:24:27-74
+service#com.zengweicong.uploadapp.MyService
+ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:27:9-31:19
+	android:enabled
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:28:13-35
+	android:exported
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:29:13-36
+	android:name
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml:30:13-38
+uses-sdk
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2eaccf271816baad80bad33511bca1a9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2eaccf271816baad80bad33511bca1a9\AndroidManifest.xml:20:5-44
+MERGED from [cn.trinea.android.common:trinea-android-common:4.2.15] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\trinea-android-common-4.2.15.aar\ee8833f4e5ef501890bd47f8db01ee7c\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.trinea.android.common:trinea-android-common:4.2.15] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\trinea-android-common-4.2.15.aar\ee8833f4e5ef501890bd47f8db01ee7c\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e13a7569cf41cf9ec5d7b5add38e5952\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e13a7569cf41cf9ec5d7b5add38e5952\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\d6d71ac162e7539cca23a2e088a9f805\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\d6d71ac162e7539cca23a2e088a9f805\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\5d45056e9b2aa11a9ec0e97c4d5736b0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\5d45056e9b2aa11a9ec0e97c4d5736b0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\53c2d65d9c07acfd733a3c6127449e2e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\53c2d65d9c07acfd733a3c6127449e2e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\9dd985be23ab69d4226196b4ba1244ac\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\9dd985be23ab69d4226196b4ba1244ac\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a24748345a788732793fddc42a93aa6e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a24748345a788732793fddc42a93aa6e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f61fd05e367d457700735752e7c899a3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f61fd05e367d457700735752e7c899a3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ff2c352a9feb9cdae04b7e4e5eef362c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ff2c352a9feb9cdae04b7e4e5eef362c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\18fee21aaeec1be536e519aa2fa07c20\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\18fee21aaeec1be536e519aa2fa07c20\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\eba31d667b4f0de77aa26d3d52e57cf9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\eba31d667b4f0de77aa26d3d52e57cf9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\4ddecdc0e7d4eee848c930379790dbb4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\wulinyu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\4ddecdc0e7d4eee848c930379790dbb4\AndroidManifest.xml:20:5-44
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidStudioProjects\UploadApp\OnlineUpdate\app\src\main\AndroidManifest.xml
