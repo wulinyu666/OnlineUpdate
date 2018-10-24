@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\AndroidStudioProjects\\UploadApp\\OnlineUpdate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "E:\\AndroidStudioProjects\\OnlineUpdate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
-                {
-                    "source": "E:\\AndroidStudioProjects\\UploadApp\\OnlineUpdate\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "90,149",
-                        "endColumns": "57,55",
-                        "endOffsets": "143,200"
-                    },
-                    "to": {
-                        "startLines": "504,505",
-                        "startColumns": "4,4",
-                        "startOffsets": "45405,45463",
-                        "endColumns": "57,55",
-                        "endOffsets": "45458,45514"
-                    }
-                },
                 {
                     "source": "C:\\Users\\wulinyu\\.gradle\\caches\\transforms-1\\files-1.1\\trinea-android-common-4.2.15.aar\\ee8833f4e5ef501890bd47f8db01ee7c\\res\\values\\strings.xml",
                     "from": {
@@ -38,20 +21,20 @@
                     }
                 },
                 {
-                    "source": "E:\\AndroidStudioProjects\\UploadApp\\OnlineUpdate\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "E:\\AndroidStudioProjects\\OnlineUpdate\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "4,6,2,3,5",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "157,250,57,105,204",
-                        "endColumns": "45,43,46,50,44",
-                        "endOffsets": "198,289,99,151,244"
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endColumns": "43",
+                        "endOffsets": "56"
                     },
                     "to": {
-                        "startLines": "118,119,120,121,122",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "6233,6279,6323,6370,6421",
-                        "endColumns": "45,43,46,50,44",
-                        "endOffsets": "6274,6318,6365,6416,6461"
+                        "startLines": "601",
+                        "startColumns": "4",
+                        "startOffsets": "51783",
+                        "endColumns": "43",
+                        "endOffsets": "51822"
                     }
                 },
                 {
@@ -93,7 +76,24 @@
                     }
                 },
                 {
-                    "source": "E:\\AndroidStudioProjects\\UploadApp\\OnlineUpdate\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\wulinyu\\.gradle\\caches\\transforms-1\\files-1.1\\trinea-android-common-4.2.15.aar\\ee8833f4e5ef501890bd47f8db01ee7c\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "9,8,7,4,3,6,5",
+                        "startColumns": "4,4,4,4,5,4,4",
+                        "startOffsets": "488,416,342,124,58,268,193",
+                        "endColumns": "66,70,72,67,63,72,73",
+                        "endOffsets": "550,482,410,187,117,336,262"
+                    },
+                    "to": {
+                        "startLines": "513,514,515,516,517,518,519",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "46033,46100,46171,46244,46312,46377,46450",
+                        "endColumns": "66,70,72,67,64,72,73",
+                        "endOffsets": "46095,46166,46239,46307,46372,46445,46519"
+                    }
+                },
+                {
+                    "source": "E:\\AndroidStudioProjects\\OnlineUpdate\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
@@ -112,20 +112,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\wulinyu\\.gradle\\caches\\transforms-1\\files-1.1\\trinea-android-common-4.2.15.aar\\ee8833f4e5ef501890bd47f8db01ee7c\\res\\values\\dimens.xml",
+                    "source": "E:\\AndroidStudioProjects\\OnlineUpdate\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "9,8,7,4,3,6,5",
-                        "startColumns": "4,4,4,4,5,4,4",
-                        "startOffsets": "488,416,342,124,58,268,193",
-                        "endColumns": "66,70,72,67,63,72,73",
-                        "endOffsets": "550,482,410,187,117,336,262"
+                        "startLines": "4,6,2,3,5",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "157,250,57,105,204",
+                        "endColumns": "45,43,46,50,44",
+                        "endOffsets": "198,289,99,151,244"
                     },
                     "to": {
-                        "startLines": "513,514,515,516,517,518,519",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "46033,46100,46171,46244,46312,46377,46450",
-                        "endColumns": "66,70,72,67,64,72,73",
-                        "endOffsets": "46095,46166,46239,46307,46372,46445,46519"
+                        "startLines": "118,119,120,121,122",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "6233,6279,6323,6370,6421",
+                        "endColumns": "45,43,46,50,44",
+                        "endOffsets": "6274,6318,6365,6416,6461"
                     }
                 },
                 {
@@ -184,20 +184,20 @@
                     }
                 },
                 {
-                    "source": "E:\\AndroidStudioProjects\\UploadApp\\OnlineUpdate\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "E:\\AndroidStudioProjects\\OnlineUpdate\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "17",
-                        "endColumns": "43",
-                        "endOffsets": "56"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "90,149",
+                        "endColumns": "57,55",
+                        "endOffsets": "143,200"
                     },
                     "to": {
-                        "startLines": "601",
-                        "startColumns": "4",
-                        "startOffsets": "51783",
-                        "endColumns": "43",
-                        "endOffsets": "51822"
+                        "startLines": "504,505",
+                        "startColumns": "4,4",
+                        "startOffsets": "45405,45463",
+                        "endColumns": "57,55",
+                        "endOffsets": "45458,45514"
                     }
                 },
                 {

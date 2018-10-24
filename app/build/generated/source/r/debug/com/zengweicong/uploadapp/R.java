@@ -11558,4 +11558,7 @@ public final class R {
      */
     public static final int drop_down_list_attr_isOnBottomStyle=2;
   }
+  public static final class xml {
+    public static final int file_paths=0x7f0e0000;
+  }
 }

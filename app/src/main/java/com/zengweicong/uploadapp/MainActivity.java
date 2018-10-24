@@ -12,9 +12,12 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.ParcelFileDescriptor;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +32,12 @@ import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -180,18 +188,54 @@ public class MainActivity extends AppCompatActivity {
                 adapter.refreshData(listpb);
             }
             if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)) {
-
                 long myDwonloadID = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
                 SharedPreferences sPreferences = context.getSharedPreferences("downloadcomplete", 0);
                 long refernece = sPreferences.getLong("refernece", 0);
                 if (refernece == myDwonloadID) {
-                    String serviceString = Context.DOWNLOAD_SERVICE;
-                    DownloadManager dManager = (DownloadManager) context.getSystemService(serviceString);
-                    Intent install = new Intent(Intent.ACTION_VIEW);
-                    Uri downloadFileUri = dManager.getUriForDownloadedFile(myDwonloadID);
-                    install.setDataAndType(downloadFileUri, "application/vnd.android.package-archive");
-                    install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(install);
+                    try {
+                        String serviceString = Context.DOWNLOAD_SERVICE;
+                        DownloadManager dManager = (DownloadManager) context.getSystemService(serviceString);
+                        Intent install = new Intent(Intent.ACTION_VIEW);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                            //能过FileDescriptor读取contentUri中的输入流
+                            //并保存到app外部存储files目录下
+                            //用于共享给安装程序用于更新
+
+                            ParcelFileDescriptor parcelFileDescriptor = dManager.openDownloadedFile(myDwonloadID);
+                            //                    ParcelFileDescriptor parcelFileDescriptor = getContentResolver().openFileDescriptor(uri, "r");
+
+                            InputStream fileInputStream = new FileInputStream(parcelFileDescriptor.getFileDescriptor());
+                            //                    InputStream fileInputStream = getContentResolver().openInputStream(uri);
+
+                            byte[] buffer = new byte[fileInputStream.available()];
+                            int read = fileInputStream.read(buffer);
+                            //不设置DownloadManager.Request的DestinationUri
+                            String tempFilePath = context.getFilesDir().getPath() + File.separator + "aaa111.apk";
+                            //设置request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "app-release.apk");
+                            File targetFile = new File(tempFilePath);
+                            long length = targetFile.length();
+                            OutputStream outStream = new FileOutputStream(targetFile);
+                            outStream.write(buffer);
+                            fileInputStream.close();
+                            outStream.close();
+
+                            Uri apkUri = FileProvider.getUriForFile(context, context.getPackageName() + ".FileProvider", targetFile);
+                            install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                            install.setDataAndType(apkUri, "application/vnd.android.package-archive");
+
+                        } else {
+
+                            Uri downloadFileUri = dManager.getUriForDownloadedFile(myDwonloadID);
+                            install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                            install.setDataAndType(downloadFileUri, "application/vnd.android.package-archive");
+                            install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        }
+                        context.startActivity(install);
+                    } catch (FileNotFoundException e){
+                        e.printStackTrace();
+                    } catch (IOException e){
+                        e.printStackTrace();
+                    }
                 }
             }
         }
